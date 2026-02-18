@@ -7,7 +7,6 @@ export const App = () => {
       <main className="flex-1">
         <Home />
       </main>
-
       <Footer />
     </div>
   )

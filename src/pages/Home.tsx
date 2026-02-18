@@ -53,7 +53,7 @@ export function Home() {
   }, [selected]);
 
   return (
-    <div className='min-h-screen bg-muted/40 p-8 flex justify-center'>
+    <div className='bg-muted/40 p-8 flex justify-center'>
       <div className='w-full max-w-6xl space-y-6'>
         <div className='space-y-2'>
           <h1 className='text-3xl font-bold tracking-tight'>
