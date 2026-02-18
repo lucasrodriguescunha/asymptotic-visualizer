@@ -1,4 +1,4 @@
-# 📊 Visualizador de Complexidade Assintótica
+# Visualizador de Complexidade Assintótica
 
 Visualização interativa da complexidade temporal de algoritmos, construída com tecnologias modernas de front-end.
 
