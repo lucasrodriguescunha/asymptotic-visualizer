@@ -16,6 +16,7 @@ import type { ComplexityType } from '../types/ComplexityType';
 import { complexityMap } from '../utils/complexityFunctions';
 import { ComplexitySelector } from '../components/charts/ComplexitySelector';
 import { ComplexityChart } from '../components/charts/ComplexityChart';
+import { RotateCcw } from 'lucide-react';
 
 type ChartData = {
   n: number;
@@ -57,7 +58,7 @@ export function Home() {
       <div className='w-full max-w-6xl space-y-6'>
         <div className='space-y-2'>
           <h1 className='text-3xl font-bold tracking-tight'>
-            Visualizador de Complexidade Assintótica
+            Visualizador Assintótico
           </h1>
           <p className='text-muted-foreground'>
             Compare visualmente a complexidade temporal dos algoritmos.
@@ -66,8 +67,8 @@ export function Home() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Complexidades selecionadas</CardTitle>
-            <CardDescription>
+            <CardTitle className='text-xl'>Complexidades selecionadas</CardTitle>
+            <CardDescription className='text-1xl'>
               Escolha quais curvas de complexidade você deseja visualizar.
             </CardDescription>
           </CardHeader>
@@ -79,14 +80,14 @@ export function Home() {
             />
 
             <Button variant='outline' onClick={reset}>
-              Reiniciar
+              <RotateCcw />
             </Button>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Gráfico de crescimento da complexidade</CardTitle>
+            <CardTitle className='text-xl'>Gráfico de crescimento da complexidade</CardTitle>
           </CardHeader>
 
           <CardContent>
