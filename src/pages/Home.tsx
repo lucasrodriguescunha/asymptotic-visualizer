@@ -1,19 +1,28 @@
-import { useMemo, useState } from 'react';
+import {
+  useMemo,
+  useState
+} from 'react';
 
-import { complexityMap } from '@/utils/complexityFunctions';
-import { ComplexitySelector } from '@/components/charts/ComplexitySelector';
-import { ComplexityChart } from '@/components/charts/ComplexityChart';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from '../components/ui/card';
 
-import type { ComplexityType } from '@/types/ComplexityType';
+import { Button } from '../components/ui/button';
+import type { ComplexityType } from '../types/ComplexityType';
+import { complexityMap } from '../utils/complexityFunctions';
+import { ComplexitySelector } from '../components/charts/ComplexitySelector';
+import { ComplexityChart } from '../components/charts/ComplexityChart';
 
 type ChartData = {
   n: number;
 } & Partial<Record<ComplexityType, number>>;
 
 export function Home() {
-  const [selected, setSelected] = useState<ComplexityType[]>([
-    'O(n)',
-  ]);
+  const [selected, setSelected] = useState<ComplexityType[]>(['O(n)']);
 
   const toggle = (value: ComplexityType) => {
     setSelected((prev) =>
@@ -21,6 +30,10 @@ export function Home() {
         ? prev.filter((item) => item !== value)
         : [...prev, value]
     );
+  };
+
+  const reset = () => {
+    setSelected(['O(n)']);
   };
 
   const data = useMemo<ChartData[]>(() => {
@@ -40,16 +53,50 @@ export function Home() {
   }, [selected]);
 
   return (
-    <div className='space-y-6 p-6'>
-      <ComplexitySelector
-        selected={selected}
-        toggle={toggle}
-      />
+    <div className='min-h-screen bg-muted/40 p-8 flex justify-center'>
+      <div className='w-full max-w-6xl space-y-6'>
+        <div className='space-y-2'>
+          <h1 className='text-3xl font-bold tracking-tight'>
+            Visualizador de Complexidade Assintótica
+          </h1>
+          <p className='text-muted-foreground'>
+            Compare visualmente a complexidade temporal dos algoritmos.
+          </p>
+        </div>
 
-      <ComplexityChart
-        data={data}
-        selectedComplexities={selected}
-      />
+        <Card>
+          <CardHeader>
+            <CardTitle>Complexidades selecionadas</CardTitle>
+            <CardDescription>
+              Escolha quais curvas de complexidade você deseja visualizar.
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent className='space-y-4'>
+            <ComplexitySelector
+              selected={selected}
+              toggle={toggle}
+            />
+
+            <Button variant='outline' onClick={reset}>
+              Reset
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Gráfico de crescimento da complexidade</CardTitle>
+          </CardHeader>
+
+          <CardContent>
+            <ComplexityChart
+              data={data}
+              selectedComplexities={selected}
+            />
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

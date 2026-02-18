@@ -2,6 +2,8 @@
 
 Interactive visualization of algorithm time complexities built with modern frontend technologies.
 
+Visualização interativa da complexidade temporal de algoritmos, construída com tecnologias modernas de front-end.
+
 ---
 
 ## 🚀 Tech Stack
@@ -21,10 +23,9 @@ Interactive visualization of algorithm time complexities built with modern front
 - ⚡ Fast and optimized build with Vite
 - 🎨 Modern UI with Shadcn
 
+- 📈 Visualização do crescimento da complexidade de tempo
+- 🔍 Comparação entre diferentes funções (O(n), O(n²), O(log n), etc.)
+- ⚡ Compilação rápida e otimizada com Vite
+- 🎨 Interface de usuário moderna com Shadcn
+
 ---
-
-## 📦 Installation
-
-```bash
-npm install
-npm run dev

@@ -37,8 +37,9 @@ export function ComplexityChart({
             key={complexity}
             type='monotone'
             dataKey={complexity}
-            strokeWidth={2}
+            strokeWidth={3}
             dot={false}
+            activeDot={{ r: 6 }}
           />
         ))}
       </LineChart>
