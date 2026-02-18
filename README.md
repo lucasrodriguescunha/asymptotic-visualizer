@@ -1,4 +1,4 @@
-# 📊 Asymptotic Visualizer
+# 📊 Visualizador assintótico
 
 Ferramenta acadêmica interativa para visualização e comparação de complexidades assintóticas de algoritmos.
 
