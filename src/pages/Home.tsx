@@ -79,7 +79,7 @@ export function Home() {
             />
 
             <Button variant='outline' onClick={reset}>
-              Reset
+              Reiniciar
             </Button>
           </CardContent>
         </Card>
