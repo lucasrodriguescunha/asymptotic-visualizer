@@ -54,21 +54,24 @@ export function Home() {
   }, [selected]);
 
   return (
-    <div className='bg-muted/40 p-8 flex justify-center'>
-      <div className='w-full max-w-6xl space-y-6'>
+    <div className='bg-muted/40 p-4 md:p-8 flex justify-center'>
+      <div className='w-full max-w-6xl space-y-4 md:space-y-6'>
+
         <div className='space-y-2'>
-          <h1 className='text-3xl font-bold tracking-tight'>
+          <h1 className='text-xl md:text-3xl font-bold tracking-tight'>
             Visualizador Assintótico
           </h1>
-          <p className='text-muted-foreground'>
+          <p className='text-sm md:text-base text-muted-foreground'>
             Compare visualmente a complexidade temporal dos algoritmos.
           </p>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle className='text-xl'>Complexidades selecionadas</CardTitle>
-            <CardDescription className='text-1xl'>
+            <CardTitle className='text-base md:text-xl'>
+              Complexidades selecionadas
+            </CardTitle>
+            <CardDescription className='text-sm md:text-base'>
               Escolha quais curvas de complexidade você deseja visualizar.
             </CardDescription>
           </CardHeader>
@@ -87,7 +90,9 @@ export function Home() {
 
         <Card>
           <CardHeader>
-            <CardTitle className='text-xl'>Gráfico de crescimento da complexidade</CardTitle>
+            <CardTitle className='text-base md:text-xl'>
+              Gráfico de crescimento da complexidade
+            </CardTitle>
           </CardHeader>
 
           <CardContent>

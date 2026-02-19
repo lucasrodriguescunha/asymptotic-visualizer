@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer className="border-t bg-background">
-      <div className="flex items-center justify-center px-6 py-6 text-sm text-muted-foreground">
+      <div className="flex items-center justify-center px-6 py-6 text-xs md:text-base text-muted-foreground">
         <p>
           Desenvolvido com ❤️ por{" "}
           <a
