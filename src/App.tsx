@@ -5,10 +5,10 @@ import { ThemeProvider } from './components/theme-provider';
 
 export const App = () => {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="min-h-screen flex flex-col bg-background">
+    <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+      <div className='min-h-screen flex flex-col bg-background'>
         <Header />
-        <main className="flex-1">
+        <main className='flex-1'>
           <Home />
         </main>
         <Footer />
