@@ -1,4 +1,4 @@
-import type { ComplexityType } from "../types/ComplexityType";
+import type { ComplexityType } from '../types/ComplexityType';
 
 export const complexityMap: Record<
   ComplexityType,

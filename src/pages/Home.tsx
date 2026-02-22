@@ -58,9 +58,6 @@ export function Home() {
       <div className='w-full max-w-6xl space-y-4 md:space-y-6'>
 
         <div className='space-y-2'>
-          <h1 className='text-xl md:text-3xl font-bold tracking-tight'>
-            Visualizador Assintótico
-          </h1>
           <p className='text-sm md:text-base text-muted-foreground'>
             Compare visualmente a complexidade temporal dos algoritmos.
           </p>
@@ -82,8 +79,9 @@ export function Home() {
               toggle={toggle}
             />
 
-            <Button variant='outline' onClick={reset}>
-              <RotateCcw />
+            <Button variant='outline' size='icon' onClick={reset}>
+              <RotateCcw className='h-[1.2rem] w-[1.2rem]' />
+              <span className='sr-only'>Resetar</span>
             </Button>
           </CardContent>
         </Card>
