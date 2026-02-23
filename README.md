@@ -41,7 +41,7 @@ As funções matemáticas são implementadas via `complexityMap`, permitindo que
 ## ✨ Funcionalidades
 
 - Seleção dinâmica de múltiplas complexidades
-- Geração automática de dados para `n` de 1 até 20
+- Geração automática de dados para `n` de 1 até 100
 - Atualização reativa do gráfico
 - Comparação simultânea de curvas
 - Reset para estado inicial
