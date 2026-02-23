@@ -15,7 +15,10 @@ const options: ComplexityType[] = [
   'O(2ⁿ)',
 ];
 
-export function ComplexitySelector({ selected, toggle }: Props) {
+export const ComplexitySelector = ({
+  selected,
+  toggle
+}: Props) => {
   return (
     <div className='grid grid-cols-3 gap-4'>
       {options.map((option) => (

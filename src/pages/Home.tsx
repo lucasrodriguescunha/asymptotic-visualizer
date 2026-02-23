@@ -16,6 +16,7 @@ import type { ComplexityType } from '../types/ComplexityType';
 import { complexityMap } from '../utils/complexityFunctions';
 import { ComplexitySelector } from '../components/charts/ComplexitySelector';
 import { ComplexityChart } from '../components/charts/ComplexityChart';
+import { ComplexitySlider } from '../components/charts/ComplexitySider';
 import { RotateCcw } from 'lucide-react';
 
 type ChartData = {
@@ -24,6 +25,7 @@ type ChartData = {
 
 export function Home() {
   const [selected, setSelected] = useState<ComplexityType[]>(['O(n)']);
+  const [maxN, setMaxN] = useState(20);
 
   const toggle = (value: ComplexityType) => {
     setSelected((prev) =>
@@ -40,7 +42,7 @@ export function Home() {
   const data = useMemo<ChartData[]>(() => {
     const arr: ChartData[] = [];
 
-    for (let n = 1; n <= 20; n++) {
+    for (let n = 1; n <= maxN; n++) {
       const row: ChartData = { n };
 
       selected.forEach((complexity) => {
@@ -51,7 +53,7 @@ export function Home() {
     }
 
     return arr;
-  }, [selected]);
+  }, [selected, maxN]);
 
   return (
     <div className='bg-muted/40 p-4 md:p-8 flex justify-center'>
@@ -73,18 +75,24 @@ export function Home() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className='space-y-4'>
+          <CardContent className="space-y-6">
             <ComplexitySelector
               selected={selected}
               toggle={toggle}
             />
-
-            <Button variant='outline' size='icon' onClick={reset}>
-              <RotateCcw className='h-[1.2rem] w-[1.2rem]' />
-              <span className='sr-only'>Resetar</span>
-            </Button>
           </CardContent>
         </Card>
+
+        <Card className='flex justify-between align-center'>
+          <ComplexitySlider
+            value={maxN}
+            onChange={setMaxN}
+          />
+        </Card>
+
+        <Button variant="outline" size="icon" onClick={reset}>
+          <RotateCcw className="h-[1.2rem] w-[1.2rem]" />
+        </Button>
 
         <Card>
           <CardHeader>

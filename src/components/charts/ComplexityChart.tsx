@@ -19,10 +19,10 @@ type Props = {
   selectedComplexities: ComplexityType[];
 };
 
-export function ComplexityChart({
+export const ComplexityChart = ({
   data,
   selectedComplexities,
-}: Props) {
+}: Props) => {
   return (
     <ResponsiveContainer width='100%' height={300}>
       <LineChart data={data}>
