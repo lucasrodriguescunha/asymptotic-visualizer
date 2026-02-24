@@ -21,7 +21,7 @@ export const ComplexitySlider = ({ value, onChange }: Props) => {
         value={[value]}
         onValueChange={(val) => onChange(val[0])}
         min={1}
-        max={100}
+        max={1000}
         step={1}
       />
     </div>
